@@ -15,7 +15,7 @@ jobs:
     - uses: actions/checkout@v2
     
     - name: Install Xcode
-      uses: nanogiants/ios-build-action@1.0.1
+      uses: mxcl/xcodebuild@v3.0.0
       
     - name: Create Xcode Project
       run: |
