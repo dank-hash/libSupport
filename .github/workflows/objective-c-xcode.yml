@@ -10,14 +10,13 @@ jobs:
     runs-on: macos-latest
     
     steps:
-    - name: Install Xcode
-      uses: mxcl/xcodebuild@v3.0.0
-      
     - name: Navigate to libSupport/demo
       run: |
-        ls
         cd libSupport/demo
-        
+
+    - name: Install Xcode
+      uses: mxcl/xcodebuild@v3.0.0
+    
     - name: Create Xcode Project
       run: |
         xcodebuild -create-xcodeproj -project framework.xcodeproj -scheme framework
