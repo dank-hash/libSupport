@@ -24,8 +24,9 @@ workflows:
                    -target framework \
                    -c Release \
                    build
-       artifacts:
-      - build/ios/ipa/*.dylib
-      - /tmp/xcodebuild_logs/*.log
+        
+         artifacts:
+          - build/ios/frameworks/*.dylib
+          - /tmp/xcodebuild_logs/*.log
 
     
