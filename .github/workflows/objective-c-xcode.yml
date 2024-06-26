@@ -19,7 +19,7 @@ jobs:
       
     - name: Create Xcode Project
       run: |
-        cd /demo/
+        cd libSupport/demo/
         xcodebuild -create-xcodeproj -project framework.xcodeproj -scheme framework
     
     - name: Set Build Settings
