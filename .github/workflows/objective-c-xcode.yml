@@ -2,9 +2,9 @@ name: Compile iOS Framework to .dylib
 
 on:
   push:
-    branches: [ master ]
+    branches: [ main ]
   pull_request:
-    branches: [ master ]
+    branches: [ main ]
 
 jobs:
 
@@ -17,9 +17,12 @@ jobs:
     - name: Install Xcode
       uses: mxcl/xcodebuild@v3.0.0
       
+    - name: Navigate to libSupport/demo
+      run: |
+        cd libSupport/demo
+        
     - name: Create Xcode Project
       run: |
-        cd libSupport/demo/
         xcodebuild -create-xcodeproj -project framework.xcodeproj -scheme framework
     
     - name: Set Build Settings
