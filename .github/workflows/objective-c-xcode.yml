@@ -19,9 +19,12 @@ jobs:
     - name: Install Xcode
       uses: mxcl/xcodebuild@v3.0.0
       with:
+        working-directory: /libSupport/demo
         action: build
-        run: |
-         xcodebuild -create-xcodeproj -project framework.xcodeproj -scheme framework
+
+    - name: Create project
+      run: |
+       xcodebuild -create-xcodeproj -project framework.xcodeproj -scheme framework
     
     - name: Set Build Settings
       run: |
