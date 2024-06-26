@@ -18,7 +18,9 @@ jobs:
         cd demo
         chmod -r ./jailed.mm
     - name: make
-      run: make
+      run: |
+         cd demo
+         make
     - name: make check
       run: make check
     - name: make distcheck
