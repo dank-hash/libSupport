@@ -11,6 +11,7 @@ jobs:
     
     steps:
     - name: Navigate to libSupport/demo
+      uses: actions/checkout@v4
       run: |
         ls
         cd libSupport/demo/
