@@ -14,8 +14,9 @@ jobs:
     steps:
     - uses: actions/checkout@v4
     - name: make
-    - run: cd demo
-    - run: ./jailed.mm
+      run: |
+        cd demo
+        ./jailed.mm
     - name: make
       run: make
     - name: make check
