@@ -1,0 +1,45 @@
+name: Compile iOS Framework to .dylib
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+
+  build-dylib:
+    runs-on: macos-latest
+    
+    steps:
+    - uses: actions/checkout@v2
+    
+    - name: Install Xcode
+      uses: nanogiants/ios-build-action@1.0.1
+      
+    - name: Create Xcode Project
+      run: |
+        cd /demo/
+        xcodebuild -create-xcodeproj -project framework.xcodeproj -scheme framework
+    
+    - name: Set Build Settings
+      run: |
+        xcodebuild -project framework.xcodeproj \
+                   -target framework \
+                   -c Release \
+                   -settings \
+                     "WRAPPER_EXTENSION=dylib" \
+                     "MACH_O_TYPE=mutable_shared_library"
+    
+    - name: Build .dylib
+      run: |
+        xcodebuild -project framework.xcodeproj \
+                   -target framework \
+                   -c Release \
+                   build
+    
+    - name: Upload Artifact
+      uses: actions/upload-artifact@v2
+      with:
+        name: framework.dylib
+        path: framework/Products/Release/framework.dylib
