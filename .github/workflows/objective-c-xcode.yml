@@ -12,7 +12,9 @@ jobs:
     steps:
     - uses: actions/checkout@v4
     - uses: sinoru/actions-setup-xcode@v2.0.2
-    
+      with: 
+       xcode-version: 15.0
+      
     - name: Navigate to libSupport/demo
       run: |
         cd demo
