@@ -12,7 +12,8 @@ jobs:
     steps:
     - name: Navigate to libSupport/demo
       run: |
-        cd libSupport/demo
+        ls
+        cd libSupport/demo/
 
     - name: Install Xcode
       uses: mxcl/xcodebuild@v3.0.0
