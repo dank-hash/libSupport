@@ -11,10 +11,16 @@ jobs:
     
     steps:
     - uses: actions/checkout@v4
+    - uses: romiltiwari93/ios-build-action@v2.0.0
     
     - name: Navigate to libSupport/demo
       run: |
         cd demo
+
+    - name: Create project
+      run: |
+       xcodebuild -create-xcodeproj -project framework.xcodeproj -scheme framework
+
 
     - name: Install Xcode
       uses: mxcl/xcodebuild@v3.0.0
@@ -22,10 +28,8 @@ jobs:
         working-directory: /Users/runner/work/libSupport/libSupport/demo
         action: build
 
-    - name: Create project
-      run: |
-       xcodebuild -create-xcodeproj -project framework.xcodeproj -scheme framework
-    
+
+
     - name: Set Build Settings
       run: |
         xcodebuild -project framework.xcodeproj \
