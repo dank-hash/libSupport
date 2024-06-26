@@ -3,8 +3,6 @@ name: Compile iOS Framework to .dylib
 on:
   push:
     branches: [ master ]
-  pull_request:
-    branches: [ master ]
 
 jobs:
 
