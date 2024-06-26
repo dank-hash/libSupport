@@ -33,4 +33,4 @@ else
 endif
 $(LIBRARY_NAME)_LDFLAGS += -lSupport
 
-include /home/runner/work/libSupport/libSupport/theos/library.mk
+include $(THEOS_MAKE_PATH)/library.mk
