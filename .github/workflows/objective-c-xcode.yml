@@ -20,10 +20,8 @@ jobs:
       uses: mxcl/xcodebuild@v3.0.0
       with:
         action: build
-        
-    - name: Create Xcode Project
-      run: |
-        xcodebuild -create-xcodeproj -project framework.xcodeproj -scheme framework
+        run: |
+         xcodebuild -create-xcodeproj -project framework.xcodeproj -scheme framework
     
     - name: Set Build Settings
       run: |
