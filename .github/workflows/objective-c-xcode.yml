@@ -15,6 +15,7 @@ jobs:
       
     - name: Navigate to libSupport/demo
       run: |
+        ls
         cd libSupport/demo
         
     - name: Create Xcode Project
