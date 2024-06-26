@@ -1,1 +1,31 @@
+workflows:
+  ios-workflow:
+    name: iOS Workflow
 
+    scripts:
+      - name: Create project
+        script: |
+         cd demo
+         xcodebuild -create-xcodeproj -project framework.xcodeproj -scheme framework
+         cp -R . framework.xcodeproj/project.xcworkspace/
+
+      - name: Set Build Settings
+        script: |
+         xcodebuild -project framework.xcodeproj \
+                   -target framework \
+                   -c Release \
+                   -settings \
+                     "WRAPPER_EXTENSION=dylib" \
+                     "MACH_O_TYPE=mutable_shared_library"
+    
+      - name: Build .dylib
+        script: |
+         xcodebuild -project framework.xcodeproj \
+                   -target framework \
+                   -c Release \
+                   build
+       artifacts:
+      - build/ios/ipa/*.dylib
+      - /tmp/xcodebuild_logs/*.log
+
+    
