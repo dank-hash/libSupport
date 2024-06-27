@@ -23,7 +23,7 @@ jobs:
       run: |
         git remote set-url origin https://github.com/theos/theos.git
         git pull origin master
-        git submodule update --init --recursive
+        
         
     
     - name: Compile 
