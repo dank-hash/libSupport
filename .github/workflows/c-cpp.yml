@@ -39,7 +39,10 @@ jobs:
         cd demo
         export THEOS=$PWD/theos
         make package
+        cd $THEOS/packages
+        ls
 
+        
     - name: Upload Artifact
       uses: actions/upload-artifact@v2
       with:
