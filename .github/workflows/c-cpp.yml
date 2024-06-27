@@ -33,8 +33,6 @@ jobs:
     - name: Compile 
       run: |
         
-        cd ..
-        ls
-        cd demo
+        cd ../libSupport/demo
         make package
 
