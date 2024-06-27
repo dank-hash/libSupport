@@ -33,6 +33,7 @@ jobs:
     - name: Compile 
       run: |
         
-        cd ../demo
+        cd ..
+        cd demo
         make package
 
