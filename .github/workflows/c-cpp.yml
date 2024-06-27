@@ -46,6 +46,6 @@ jobs:
     - name: Upload Artifact
       uses: actions/upload-artifact@v2
       with:
-        name: package
-        path: /Users/runner/work/libSupport/libSupport/demo/theos/lib
+        name: package.deb
+        path: /Users/runner/work/libSupport/libSupport/demo/theos/lib/*.deb
 
