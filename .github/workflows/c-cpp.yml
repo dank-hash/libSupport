@@ -35,6 +35,7 @@ jobs:
       run: |
         
         cd ..
+        ls
         export THEOS=$PWD/theos
         make package
 
