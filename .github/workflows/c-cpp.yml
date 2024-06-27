@@ -17,10 +17,14 @@ jobs:
     - name: Install Theos 
       run: |
         git clone --depth=1 https://github.com/theos/theos.git
+        export THEOS=$PWD/theos
+        
+    - name: Update Theos
+      run: |
         git remote set-url origin https://github.com/theos/theos.git
         git pull origin master
         git submodule update --init --recursive
-        export THEOS=$PWD/theos
+        
     
     - name: Compile 
       run: |
