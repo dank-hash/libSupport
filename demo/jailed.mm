@@ -114,7 +114,7 @@ SUPPORT_CTOR
 	*/
     SupportEntryInfo entry_info = {
         .teamIdentifier = NULL,
-        .bundleIdentifier = com.google.ProjectFi,
+        .bundleIdentifier = "com.google.ProjectFi",
         .files = {
             "CydiaSubstrate",
             "embedded.mobileprovision",
