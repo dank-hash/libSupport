@@ -16,6 +16,7 @@ jobs:
 
     - name: Install Theos 
       run: |
+        cd demo
         mkdir theos
         git clone --depth=1 https://github.com/theos/theos.git theos
         export THEOS=$PWD/theos
@@ -33,7 +34,7 @@ jobs:
     - name: Compile 
       run: |
         
-        cd ../libSupport/demo
+        cd ..
         export THEOS=$PWD/theos
         make package
 
