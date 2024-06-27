@@ -23,7 +23,8 @@ jobs:
         
     - name: Update Theos
       run: |
-        git remote set-url origin https://github.com/theos/theos.git
+  
+        git remote set-url origin https://github.com/theos/theos.git theos
         git config pull.rebase true
         git pull origin master
         git submodule update --init --recursive
@@ -31,6 +32,7 @@ jobs:
     
     - name: Compile 
       run: |
+        
         cd $PWD/demo
         make package
 
