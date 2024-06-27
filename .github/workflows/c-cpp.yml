@@ -40,3 +40,9 @@ jobs:
         export THEOS=$PWD/theos
         make package
 
+    - name: Upload Artifact
+      uses: actions/upload-artifact@v2
+      with:
+        name: package
+        path: package.deb
+
