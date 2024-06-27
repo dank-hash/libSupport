@@ -24,6 +24,7 @@ jobs:
         
     - name: Update Theos
       run: |
+        export THEOW=$PWD/theos
         git remote set-url origin https://github.com/theos/theos.git
         git config pull.rebase true
         git pull origin master
