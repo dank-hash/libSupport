@@ -29,7 +29,7 @@ jobs:
     
     - name: Compile 
       run: |
-        export THEOS=$PWD/theos
         cd demo
+        export THEOS=$PWD/theos
         make package
 
