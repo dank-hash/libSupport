@@ -14,6 +14,9 @@ jobs:
     steps:
     - uses: actions/checkout@v4
 
+    - name: Install ldid
+      run: brew install ldid
+
     - name: Install Theos 
       run: |
         cd demo
@@ -33,7 +36,6 @@ jobs:
     
     - name: Compile 
       run: |
-        
         cd demo
         export THEOS=$PWD/theos
         make package
