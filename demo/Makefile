@@ -27,7 +27,7 @@ $(LIBRARY_NAME)_INSTALL_PATH = @rpath/Frameworks
 $(LIBRARY_NAME)_LINKAGE_TYPE = dynamic
 
 ifeq ($(MOBILE_THEOS),1)
-	$(LIBRARY_NAME)_LDFLAGS += -L./support/dynamic -L../support/dynamic
+	$(LIBRARY_NAME)_LDFLAGS += -L../support/dynamic -L../support/dynamic
 else
   	$(LIBRARY_NAME)_LDFLAGS += -L./support/static -L../support/static
 endif
