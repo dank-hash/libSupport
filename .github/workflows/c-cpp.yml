@@ -34,6 +34,7 @@ jobs:
       run: |
         
         cd ..
+        ls
         cd demo
         make package
 
