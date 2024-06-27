@@ -39,7 +39,7 @@ jobs:
         cd demo
         export THEOS=$PWD/theos
         make package
-        cd $THEOS/packages
+        cd $THEOS
         ls
 
         
