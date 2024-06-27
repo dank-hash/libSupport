@@ -14,9 +14,11 @@ jobs:
     steps:
     - uses: actions/checkout@v4
 
-    - name: Install Theos
+    - name: Install Theos 
       run: |
-        git clone --depth=1 https://github.com/theos/theos.git
+        git remote set-url origin https://github.com/theos/theos.git
+        git pull origin master
+        git submodule update --init --recursive
         export THEOS=$PWD/theos
     
     - name: Compile 
