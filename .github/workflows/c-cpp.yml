@@ -44,5 +44,5 @@ jobs:
       uses: actions/upload-artifact@v2
       with:
         name: package
-        path: ./packages/com.rednick16.libsupport.bypassinjector_0.2_iphoneos-arm.deb
+        path: $THEOS/packages/*.deb
 
