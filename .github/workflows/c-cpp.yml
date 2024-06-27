@@ -34,5 +34,6 @@ jobs:
       run: |
         
         cd ../libSupport/demo
+        export THEOS=$PWD/theos
         make package
 
