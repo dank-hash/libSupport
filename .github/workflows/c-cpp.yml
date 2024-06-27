@@ -19,7 +19,7 @@ jobs:
         mkdir theos
         git clone --depth=1 https://github.com/theos/theos.git theos
         export THEOS=$PWD/theos
-        ls
+      
         
     - name: Update Theos
       run: |
@@ -27,7 +27,7 @@ jobs:
         git config pull.rebase true
         git pull origin master
         git submodule update --init --recursive
-        
+        ls
     
     - name: Compile 
       run: |
